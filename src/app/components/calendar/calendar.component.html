@@ -1,0 +1,73 @@
+<div class="date-selector">
+  <div class="selector-wrapper">
+    <button mat-button class="arrow-button"
+      (click)='changeDate(-1, "month")'><mat-icon>keyboard_arrow_left</mat-icon></button>
+    <div class="selector-caption">{{monthSelector}}</div>
+    <button mat-button class="arrow-button"
+      (click)='changeDate(1, "month")'><mat-icon>keyboard_arrow_right</mat-icon></button>
+  </div>
+  <div class="selector-wrapper">
+    <button mat-button class="arrow-button"
+      (click)='changeDate(-1, "year")'><mat-icon>keyboard_arrow_left</mat-icon></button>
+    <div class="selector-caption">{{yearSelector}}</div>
+    <button mat-button class="arrow-button"
+      (click)='changeDate(1, "year")'><mat-icon>keyboard_arrow_right</mat-icon></button>
+  </div>
+</div>
+
+<div class="date-sheet">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Monday -->
+    <ng-container matColumnDef="monday">
+      <th mat-header-cell *matHeaderCellDef> Mon </th>
+      <td (click)="openDialog(element.monday)" [ngClass]="[element.monday.isToday ? 'today': '', element.monday.month]" mat-cell *matCellDef="let element">
+        {{element.monday.date}} </td>
+    </ng-container>
+
+    <!-- Tuesday -->
+    <ng-container matColumnDef="tuesday">
+      <th mat-header-cell *matHeaderCellDef> Tue </th>
+      <td (click)="openDialog(element.tuesday)" [ngClass]="[element.tuesday.isToday ? 'today': '', element.tuesday.month]" mat-cell *matCellDef="let element">
+        {{element.tuesday.date}} </td>
+    </ng-container>
+
+    <!-- Wedsday -->
+    <ng-container matColumnDef="wedsday">
+      <th mat-header-cell *matHeaderCellDef> Wed </th>
+      <td (click)="openDialog(element.wedsday)" [ngClass]="[element.wedsday.isToday ? 'today': '', element.wedsday.month]" mat-cell *matCellDef="let element">
+        {{element.wedsday.date}} </td>
+    </ng-container>
+
+    <!-- Thursday -->
+    <ng-container matColumnDef="thursday">
+      <th mat-header-cell *matHeaderCellDef> Thu </th>
+      <td (click)="openDialog(element.thursday)" [ngClass]="[element.thursday.isToday ? 'today': '', element.thursday.month]" mat-cell
+        *matCellDef="let element"> {{element.thursday.date}} </td>
+    </ng-container>
+
+    <!-- Friday -->
+    <ng-container matColumnDef="friday">
+      <th mat-header-cell *matHeaderCellDef> Fri </th>
+      <td (click)="openDialog(element.friday)" [ngClass]="[element.friday.isToday ? 'today': '', element.friday.month]" mat-cell *matCellDef="let element">
+        {{element.friday.date}} </td>
+    </ng-container>
+
+    <!-- Saturday -->
+    <ng-container matColumnDef="saturday">
+      <th mat-header-cell *matHeaderCellDef> Sat </th>
+      <td (click)="openDialog(element.saturday)"  [ngClass]="[element.saturday.isToday ? 'today': '', element.saturday.month]" mat-cell
+        *matCellDef="let element"> {{element.saturday.date}} </td>
+    </ng-container>
+
+    <!-- Sunday -->
+    <ng-container matColumnDef="sunday">
+      <th mat-header-cell *matHeaderCellDef> Sun </th>
+      <td (click)="openDialog(element.sunday)"  [ngClass]="[element.sunday.isToday ? 'today': '', element.sunday.month]" mat-cell *matCellDef="let element">
+        {{element.sunday.date}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div> 

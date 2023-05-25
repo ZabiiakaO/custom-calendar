@@ -1,0 +1,99 @@
+.date-selector {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    justify-content: space-around;
+}
+
+.selector-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 2rem;
+    width: 13rem;
+}
+
+.selector-caption {
+    text-align: center;
+    min-width: 13rem;
+}
+
+table,
+th,
+td {
+    text-align: center;
+    height: 5rem;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    ;
+}
+
+td.today {
+    background-color: #4e9cea;
+    border: 5px solid red;
+}
+
+td:hover {
+    background-color: #11508e;
+    cursor: pointer;
+}
+
+.january {
+    background-color: #dfdbf6
+}
+
+.february {
+    background-color: #f5f4ff
+}
+
+.march {
+    background-color: #f3fff7
+}
+
+.april {
+    background-color: #efffef
+}
+
+.may {
+    background-color: #fffeee
+}
+
+.june {
+    background-color: #fef9f0
+}
+
+.july {
+    background-color: #fdf0ec
+}
+
+.august {
+    background-color: #ffdcdc
+}
+
+.september {
+    background-color: #fff4f0
+}
+
+.october {
+    background-color: #cbbfbf
+}
+
+.november {
+    background-color: #d39e9e
+}
+
+.december {
+    background-color: #eff6ff
+}
+
+@media (max-width: 635px) {
+    .date-selector {
+        flex-direction: column;
+        gap: 0.2rem
+    }
+
+    .selector-wrapper {
+        width: 100%;
+        justify-content: space-around;
+        margin: 0.3rem;
+    }
+}
